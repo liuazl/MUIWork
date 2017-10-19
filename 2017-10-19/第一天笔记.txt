@@ -1,0 +1,94 @@
+mui组件的快捷键
+
+mh （mHeader）标题栏
+
+mb （mBody）主体部分
+
+ma （maccordion）折叠面板：
+注意事项：
+1、折叠面板布局必须在 mui-content下
+2、外层使用 mui-card 包裹产生边缘
+3、与mlist结合使用
+
+ma（mActionsheet）H5模式弹出菜单：
+
+数字角标
+无底色数字角标
+mb (mbadge) 
+<span class="mui-badge mui-btn-blue">1</span>
+
+有底色数字角标
+mb (mbadge) 
+<span class="mui-badge mui-badge-inverted mui-btn-blue">1</span>
+
+
+按钮
+
+普通按钮
+mb （mButton）按钮
+<button type="button" class="mui-btn mui-btn-blue">按钮</button>
+
+块状按钮
+mb（mButton）
+<button type="button" class="mui-btn mui-btn-blue mui-btn-block">按钮</button>
+
+有边框无底色的按钮
+mb   mButton(按钮无底色,有边框)
+<button type="button" class="mui-btn mui-btn-blue mui-btn-outlined">按钮</button>
+
+正在加载的按钮
+
+需要添加一个js事件
+<script type="text/javascript">
+		mui(document.body).on('tap', '.className', function(e) {
+		    mui(this).button('loading');
+		    setTimeout(function() {
+		        mui(this).button('reset');
+		    }.bind(this), 2000);
+		});
+		</script>
+
+
+
+卡片视图：
+使用mui-card类即可生成一个卡片容器，卡片视图主要有页眉、内容区、页脚三部分组成，结构如下：
+
+<div class="mui-card">
+	<!--页眉，放置标题-->
+	<div class="mui-card-header">页眉</div>
+	<!--内容区-->
+	<div class="mui-card-content">内容区</div>
+	<!--页脚，放置补充信息或支持的操作-->
+	<div class="mui-card-footer">页脚</div>
+</div>
+
+希望在页眉放置更丰富的信息，比如头像、主标题、副标题，则需使用.mui-media-body类，示例代码如下：
+<div class="mui-card-header mui-card-media">
+	<img src="../images/logo.png" />
+	<div class="mui-media-body">
+		小M
+		<p>发表于 2016-06-30 15:30</p>
+	</div>
+</div>
+
+复选框
+
+mc mcheckbox  (复选框)
+<div class="mui-input-row mui-checkbox ">
+    <label>名字</label>
+    <input name="Checkbox" type="checkbox" checked>
+</div>
+
+消息框
+先创建一个按钮 或者不创建也可以  在script里面写方法：
+var obtn=document.getElementById("按钮的id名");
+		obtn.onclick=function(){
+		警告框：/*mui.alert('你好');*/
+		确认框：/*mui.confirm("您确定要关闭吗？");*/
+		输入对话框：/*mui.prompt("请输入姓名");*/
+		自动消失提示框：mui.toast("你好")
+		}
+
+图片轮播：
+
+ms  mslider_gallery
