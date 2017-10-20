@@ -1,0 +1,110 @@
+栅格：
+
+使用时只需在外围容器上添加.mui-row，
+
+在列上添加 .mui-col-[sm|xs]-[1-12]，即可
+
+图标
+
+快捷键  mi （mIcon(图标)
+
+触发字符：micon）
+<span class="mui-icon mui-icon-weixin"></span>
+<span class="mui-icon mui-icon-qq"></span> 
+
+想要获得图标只需要修改class里的mui-icon-图标名 
+
+输入表单
+在form中添加mui-input-group类
+在账户标签中添加mui-input-clear类；密码中添加mui-input-password类
+
+确定按钮mui-btn mui-btn-primary类
+取消按钮mui-btn mui-btn-danger类
+
+快速删除文本框中的内容
+在文本框标签中添加mui-input-clear类
+
+搜索框：
+在.mui-input-row同级添加.mui-input-search 类，就可以使用search控件
+
+密码框：
+给input元素添加.mui-input-password类即可使用
+
+
+举例：验证表单是否为空
+<div class="mui-input-group">
+    <div class="mui-input-row">
+        <label>用户名：</label>
+        <input type="text" class="mui-input-clear" placeholder="请输入用户名">
+    </div>
+    <div class="mui-input-row">
+        <label>密码：</label>
+        <input type="password" class="mui-input-clear mui-input-password" placeholder="请输入密码">
+    </div>
+</div>
+提交时校验三个字段均不能为空，若为空则提醒并终止业务逻辑运行，使用each()方法循环校验，如下：
+mui("#input_example input").each(function() {
+//若当前input为空，则alert提醒 
+if(!this.value || this.value.trim() == "") {
+    var label = this.previousElementSibling;
+    mui.alert(label.innerText + "不允许为空");
+    check = false;
+    return false;
+}
+}); //校验通过，继续执行业务逻辑 
+if(check){
+    mui.alert('验证通过!')
+}
+注：始终为button按钮添加type属性，若button按钮没有type属性，浏览器默认按照type="submit"逻辑处理， 这样若将没有type的button放在form表单中，点击按钮就会执行form表单提交，页面就会刷新，用户体验极差。
+
+列表  （ml）
+普通列表：
+只需要在ul节点上添加.mui-table-view类、在li节点上添加.mui-table-view-cell类即可。
+
+右侧添加导航栏箭头：
+需在li节点下增加a子节点，并为该a节点增加.mui-navigate-right。
+
+右侧添加数字图标等控件
+mui默认将数字角标放在列表右侧显示
+
+遮罩蒙版：
+遮罩蒙版常用的操作包括：创建、显示、关闭。
+注意：关闭遮罩仅会关闭，不会销毁；关闭之后可以再次调用mask.show();打开遮罩；
+mui默认的蒙版遮罩使用.mui-backdrop类定义（如下代码），若需自定义遮罩效果，只需覆盖定义.mui-backdrop
+
+
+数字输入框：
+<div class="mui-numbox">
+  <!-- "-"按钮，点击可减小当前数值 -->
+  <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+  <input class="mui-numbox-input" type="number" />
+  <!-- "+"按钮，点击可增大当前数值 -->
+  <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+</div>
+
+侧滑菜单栏：mo
+侧滑菜单栏分为四种：
+1、主界面移动、菜单不动；
+2、主界面不动、菜单移动；
+3、主界面、菜单同时移动；
+4、缩放式侧滑（类手机QQ）
+动画1：
+主界面移动、菜单不动：
+快捷键：mo  mOffcanvas(侧滑导航-主界面移动、菜单不动)
+触发字符：moffcanvasmain
+
+动画2：缩放式侧滑（类手机QQ）
+该种动画要求的DOM结构和动画1的DOM结构基本相同，唯一差别就是需在侧滑导航根容器class上增加一个mui-scalable类
+
+动画3：主界面不动、菜单移动
+该种动画要求的DOM结构和动画1的DOM结构基本相同，唯一差别就是需在侧滑导航根容器class上增加一个mui-slide-in类
+
+动画4：主界面、菜单同时移动
+该种动画要求的DOM结构较特殊，需将菜单容器放在主页面容器之下
+会看到主界面会有遮罩
+
+弹出菜单：
+mp  
+mPopover(弹出菜单)
+
+触发字符：mpopover
