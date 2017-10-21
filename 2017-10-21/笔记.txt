@@ -1,0 +1,60 @@
+picker选择器  （不明白）
+
+通过new mui.PopPicker()初始化popPicker组件
+
+
+进度条（progressbar）
+mp
+分为：无限循环和有准确值
+无限循环：
+mprogressbar(进度条-无限循环)
+触发字符：mprogressbarinfinite
+
+有准确值：
+mprogressbar(进度条-有准确值)
+触发字符：mprogressbar
+
+mui("选择器").progressbar().setProgress(进度值 );
+
+radio（单选框）
+radio用于单选的情况
+快捷键：mr
+
+
+mui基于列表控件，提供了列表式单选实现；在列表根节点上增加.mui-table-view-radio类即可，
+快捷键：ml
+若要默认选中某项，只需要在对应li节点上增加.mui-selected类即可
+
+range（滑块）
+滑块常用于区间数字选择
+快捷键：mr
+
+scroll(区域滚动)
+快捷键：ms
+在App开发中，div区域滚动的需求是普遍存在的，但系统默认实现又有如下问题：
+
+Android平台4.0以下不支持div滚动
+Android平台4.0以上支持div滚动，但不显示滚动条
+弹出层的div滚动在iOS平台存在事件透传的问题
+
+slide（轮播组件）
+快捷键：ms
+
+
+switch(开关)
+开关分为四种：
+1、mSwitch(开关 - 蓝色)
+   触发字符：mswitchblue
+   若希望开关默认为打开状态，只需要在.mui-switch节点上增加.mui-active类即可。
+2、mSwitch(开关)（绿色）
+    触发字符：mswitch
+
+若希望隐藏on/off文字提示，变成简洁模式，需要在.mui-switch节点上增加.mui-switch-mini类
+3、mSwitch(开关Mini - blue)
+  触发字符：mswitchminiblue   
+
+4、mSwitch(开关Mini)
+  触发字符：mswitchmini
+  
+注意：
+mui默认还提供了蓝色开关控件，只需在.mui-switch节点上增加.mui-switch-blue类即可
